@@ -1,0 +1,36 @@
+Metadata-Version: 2.1
+Name: FITX
+Version: 1.0.1
+Summary: Fit my InsTability eXponential
+Home-page: https://github.com/aoeftiger/FITX
+Author: Adrian Oeftiger
+Author-email: adrian@oeftiger.net
+License: MIT
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 2.6
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=2.6
+Description-Content-Type: text/markdown
+Requires-Dist: numpy
+
+# FITX
+Fit my InsTability eXponential
+
+A library to isolate and fit exponential rise times in unstable systems with saturation.
+
+## How To
+
+Check out the jupyter notebook [HowTo.ipynb](https://nbviewer.jupyter.org/github/aoeftiger/FITX/blob/master/HowTo.ipynb) for a quick start how to do this:
+
+![example](https://raw.githubusercontent.com/aoeftiger/FITX/master/fitting.png)
+
+## Thanks...
+
+... for checking out the repository, I hope the algorithm is as useful to you as to me -- it's been successfully applied to instability studies in the CERN Large Hadron Collider (and other machines) in both simulations and experiments.
+
+2019, Adrian Oeftiger
+
+

@@ -19,17 +19,43 @@ export default function Hero() {
       setFile(e.target.files[0])
     }
   }
-
-  const handleSubmit = (e: React.FormEvent) => {
+  
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsLoading(true)
-
-    // Simulate API call
-    setTimeout(() => {
+  
+    if (!file || !url) {
+      alert("Please select a file and enter a URL before submitting.")
       setIsLoading(false)
-      // Here you would handle the actual submission
-    }, 2000)
+      return
+    }
+  
+    const formData = new FormData()
+    formData.append("file", file) // Ensure "file" matches Flask key
+    formData.append("url", url)   // Adding URL to form data
+  
+    try {
+      const response = await fetch("http://127.0.0.1:5000/api/run_test", {
+        method: "POST",
+        body: formData,
+      })
+  
+      const data = await response.json()
+  
+      if (response.ok) {
+        alert("File and URL uploaded successfully!")
+      } else {
+        alert(`Error: ${data.error}`)
+      }
+    } catch (error) {
+      alert("Failed to upload file and URL. Please try again.")
+      console.error("Upload Error:", error)
+    } finally {
+      setIsLoading(false)
+    }
   }
+  
+  
 
   return (
     <section className="pt-32 pb-16 md:pt-40 md:pb-24 relative overflow-hidden">
