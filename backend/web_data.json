@@ -1,0 +1,664 @@
+[
+    {
+        "tag": "div",
+        "attributes": {
+            "data-turbo-body": "",
+            "class": [
+                "logged-out",
+                "env-production",
+                "page-responsive",
+                "session-authentication"
+            ],
+            "style": "word-wrap: break-word;"
+        },
+        "text": "Skip to contentYou signed in with another tab or window.Reloadto refresh your session.You signed out in another tab or window.Reloadto refresh your session.You switched accounts on another tab or window.Reloadto refresh your session.Dismiss alertSign in to GitHubUsername or email addressPasswordForgot password?Password login alternativesSign in with a passkeyNew to GitHub?Create an accountTermsPrivacyDocsContact GitHub SupportManage cookiesDo not share my personal informationYou can\u2019t perform that action at this time."
+    },
+    {
+        "tag": "div",
+        "attributes": {
+            "class": [
+                "position-relative",
+                "header-wrapper",
+                "js-header-wrapper"
+            ]
+        },
+        "text": "Skip to contentYou signed in with another tab or window.Reloadto refresh your session.You signed out in another tab or window.Reloadto refresh your session.You switched accounts on another tab or window.Reloadto refresh your session.Dismiss alert"
+    },
+    {
+        "tag": "a",
+        "attributes": {
+            "href": "#start-of-content",
+            "data-skip-target-assigned": "false",
+            "class": [
+                "px-2",
+                "py-4",
+                "color-bg-accent-emphasis",
+                "color-fg-on-emphasis",
+                "show-on-focus",
+                "js-skip-to-content"
+            ]
+        },
+        "text": "Skip to content"
+    },
+    {
+        "tag": "div",
+        "attributes": {
+            "data-target": "react-partial.reactRoot"
+        },
+        "text": ""
+    },
+    {
+        "tag": "div",
+        "attributes": {
+            "class": [
+                "d-none"
+            ]
+        },
+        "text": ""
+    },
+    {
+        "tag": "div",
+        "attributes": {
+            "class": [
+                "header",
+                "header-logged-out",
+                "width-full",
+                "pt-5",
+                "pb-4"
+            ],
+            "role": "banner"
+        },
+        "text": ""
+    },
+    {
+        "tag": "div",
+        "attributes": {
+            "class": [
+                "container",
+                "clearfix",
+                "width-full",
+                "text-center"
+            ]
+        },
+        "text": ""
+    },
+    {
+        "tag": "a",
+        "attributes": {
+            "class": [
+                "header-logo"
+            ],
+            "href": "https://github.com/",
+            "aria-label": "Homepage",
+            "data-ga-click": "(Logged out) Header, go to homepage, icon:logo-wordmark"
+        },
+        "text": ""
+    },
+    {
+        "tag": "div",
+        "attributes": {
+            "hidden": "hidden",
+            "data-view-component": "true",
+            "class": [
+                "js-stale-session-flash",
+                "stale-session-flash",
+                "flash",
+                "flash-warn",
+                "flash-full"
+            ]
+        },
+        "text": "You signed in with another tab or window.Reloadto refresh your session.You signed out in another tab or window.Reloadto refresh your session.You switched accounts on another tab or window.Reloadto refresh your session.Dismiss alert"
+    },
+    {
+        "tag": "a",
+        "attributes": {
+            "class": [
+                "Link--inTextBlock"
+            ],
+            "href": ""
+        },
+        "text": "Reload"
+    },
+    {
+        "tag": "a",
+        "attributes": {
+            "class": [
+                "Link--inTextBlock"
+            ],
+            "href": ""
+        },
+        "text": "Reload"
+    },
+    {
+        "tag": "a",
+        "attributes": {
+            "class": [
+                "Link--inTextBlock"
+            ],
+            "href": ""
+        },
+        "text": "Reload"
+    },
+    {
+        "tag": "button",
+        "attributes": {
+            "id": "icon-button-2cdf5696-329d-45aa-932c-59c27785578c",
+            "aria-labelledby": "tooltip-0bb5fff8-02c5-4f5c-a5c7-cdf8b65f7f41",
+            "type": "button",
+            "data-view-component": "true",
+            "class": [
+                "Button",
+                "Button--iconOnly",
+                "Button--invisible",
+                "Button--medium",
+                "flash-close",
+                "js-flash-close"
+            ]
+        },
+        "text": ""
+    },
+    {
+        "tag": "div",
+        "attributes": {
+            "id": "start-of-content",
+            "class": [
+                "show-on-focus"
+            ]
+        },
+        "text": ""
+    },
+    {
+        "tag": "div",
+        "attributes": {
+            "class": [
+                "application-main"
+            ],
+            "data-commit-hovercards-enabled": "",
+            "data-discussion-hovercards-enabled": "",
+            "data-issue-and-pr-hovercards-enabled": "",
+            "data-project-hovercards-enabled": ""
+        },
+        "text": "Sign in to GitHubUsername or email addressPasswordForgot password?Password login alternativesSign in with a passkeyNew to GitHub?Create an account"
+    },
+    {
+        "tag": "div",
+        "attributes": {
+            "class": [
+                "auth-form",
+                "px-3"
+            ],
+            "id": "login",
+            "data-hpc": ""
+        },
+        "text": "Sign in to GitHubUsername or email addressPasswordForgot password?Password login alternativesSign in with a passkeyNew to GitHub?Create an account"
+    },
+    {
+        "tag": "div",
+        "attributes": {
+            "class": [
+                "auth-form-header",
+                "p-0"
+            ]
+        },
+        "text": "Sign in to GitHub"
+    },
+    {
+        "tag": "div",
+        "attributes": {
+            "id": "js-flash-container",
+            "class": [
+                "flash-container"
+            ],
+            "data-turbo-replace": ""
+        },
+        "text": ""
+    },
+    {
+        "tag": "div",
+        "attributes": {
+            "class": [
+                "flash",
+                "flash-full",
+                "{{",
+                "className",
+                "}}"
+            ]
+        },
+        "text": ""
+    },
+    {
+        "tag": "div",
+        "attributes": {},
+        "text": ""
+    },
+    {
+        "tag": "button",
+        "attributes": {
+            "autofocus": "",
+            "class": [
+                "flash-close",
+                "js-flash-close"
+            ],
+            "type": "button",
+            "aria-label": "Dismiss this message"
+        },
+        "text": ""
+    },
+    {
+        "tag": "div",
+        "attributes": {
+            "aria-atomic": "true",
+            "role": "alert",
+            "class": [
+                "js-flash-alert"
+            ]
+        },
+        "text": ""
+    },
+    {
+        "tag": "div",
+        "attributes": {},
+        "text": ""
+    },
+    {
+        "tag": "div",
+        "attributes": {
+            "class": [
+                "flash",
+                "js-transform-notice"
+            ],
+            "hidden": ""
+        },
+        "text": ""
+    },
+    {
+        "tag": "button",
+        "attributes": {
+            "class": [
+                "flash-close",
+                "js-flash-close"
+            ],
+            "type": "button",
+            "aria-label": "Dismiss this message"
+        },
+        "text": ""
+    },
+    {
+        "tag": "div",
+        "attributes": {
+            "class": [
+                "auth-form-body",
+                "mt-3"
+            ]
+        },
+        "text": "Username or email addressPasswordForgot password?"
+    },
+    {
+        "tag": "form",
+        "attributes": {
+            "data-turbo": "false",
+            "action": "/session",
+            "accept-charset": [
+                "UTF-8"
+            ],
+            "method": "post"
+        },
+        "text": "Username or email addressPasswordForgot password?"
+    },
+    {
+        "tag": "input",
+        "attributes": {
+            "type": "text",
+            "name": "login",
+            "id": "login_field",
+            "class": [
+                "form-control",
+                "input-block",
+                "js-login-field"
+            ],
+            "autocapitalize": "off",
+            "autocorrect": "off",
+            "autocomplete": "username",
+            "autofocus": "autofocus",
+            "required": "required"
+        },
+        "text": ""
+    },
+    {
+        "tag": "div",
+        "attributes": {
+            "class": [
+                "position-relative"
+            ]
+        },
+        "text": "PasswordForgot password?"
+    },
+    {
+        "tag": "input",
+        "attributes": {
+            "type": "password",
+            "name": "password",
+            "id": "password",
+            "class": [
+                "form-control",
+                "form-control",
+                "input-block",
+                "js-password-field"
+            ],
+            "autocomplete": "current-password",
+            "required": "required"
+        },
+        "text": ""
+    },
+    {
+        "tag": "a",
+        "attributes": {
+            "class": [
+                "label-link",
+                "position-absolute",
+                "top-0",
+                "right-0"
+            ],
+            "id": "forgot-password",
+            "href": "/password_reset"
+        },
+        "text": "Forgot password?"
+    },
+    {
+        "tag": "input",
+        "attributes": {
+            "class": [
+                "form-control"
+            ],
+            "type": "text",
+            "name": "required_field_6c72",
+            "hidden": "hidden"
+        },
+        "text": ""
+    },
+    {
+        "tag": "input",
+        "attributes": {
+            "type": "submit",
+            "name": "commit",
+            "value": "Sign in",
+            "class": [
+                "btn",
+                "btn-primary",
+                "btn-block",
+                "js-sign-in-button"
+            ],
+            "data-disable-with": "Signing in\u2026",
+            "data-signin-label": "Sign in",
+            "data-sso-label": "Sign in with your identity provider",
+            "development": "false",
+            "disable-emu-sso": "false"
+        },
+        "text": ""
+    },
+    {
+        "tag": "div",
+        "attributes": {
+            "class": [
+                "login-callout",
+                "mt-3"
+            ]
+        },
+        "text": "Sign in with a passkeyNew to GitHub?Create an account"
+    },
+    {
+        "tag": "button",
+        "attributes": {
+            "data-action": "click:webauthn-subtle#prompt",
+            "type": "button",
+            "data-view-component": "true",
+            "class": [
+                "Button--link",
+                "Button--medium",
+                "Button"
+            ]
+        },
+        "text": "Sign in with a passkey"
+    },
+    {
+        "tag": "a",
+        "attributes": {
+            "data-ga-click": "Sign in, switch to sign up",
+            "data-hydro-click": "{\"event_type\":\"authentication.click\",\"payload\":{\"location_in_page\":\"sign in switch to sign up\",\"repository_id\":null,\"auth_type\":\"SIGN_UP\",\"originating_url\":\"https://github.com/login\",\"user_id\":null}}",
+            "data-hydro-click-hmac": "d943b5df3b8e74686b4009e60ef5e059ef46ba02071647af580daec2c03c709e",
+            "href": "/signup?source=login"
+        },
+        "text": "Create an account"
+    },
+    {
+        "tag": "div",
+        "attributes": {
+            "class": [
+                "footer",
+                "container-lg",
+                "p-responsive",
+                "py-6",
+                "mt-6",
+                "f6",
+                "d-flex",
+                "flex-justify-center",
+                "flex-items-center",
+                "flex-lg-row",
+                "flex-wrap",
+                "flex-lg-nowrap"
+            ],
+            "role": "contentinfo"
+        },
+        "text": "TermsPrivacyDocsContact GitHub SupportManage cookiesDo not share my personal information"
+    },
+    {
+        "tag": "a",
+        "attributes": {
+            "data-analytics-event": "{\"category\":\"Footer\",\"action\":\"go to Terms\",\"label\":\"text:terms\"}",
+            "href": "https://docs.github.com/site-policy/github-terms/github-terms-of-service",
+            "data-view-component": "true",
+            "class": [
+                "Link--secondary",
+                "Link"
+            ]
+        },
+        "text": "Terms"
+    },
+    {
+        "tag": "a",
+        "attributes": {
+            "data-analytics-event": "{\"category\":\"Footer\",\"action\":\"go to privacy\",\"label\":\"text:privacy\"}",
+            "href": "https://docs.github.com/site-policy/privacy-policies/github-privacy-statement",
+            "data-view-component": "true",
+            "class": [
+                "Link--secondary",
+                "Link"
+            ]
+        },
+        "text": "Privacy"
+    },
+    {
+        "tag": "a",
+        "attributes": {
+            "data-analytics-event": "{\"category\":\"Footer\",\"action\":\"go to docs\",\"label\":\"text:docs\"}",
+            "href": "https://docs.github.com",
+            "data-view-component": "true",
+            "class": [
+                "Link--secondary",
+                "Link"
+            ]
+        },
+        "text": "Docs"
+    },
+    {
+        "tag": "a",
+        "attributes": {
+            "data-analytics-event": "{\"category\":\"Footer\",\"action\":\"go to contact\",\"label\":\"text:contact\"}",
+            "href": "https://support.github.com",
+            "data-view-component": "true",
+            "class": [
+                "Link--secondary",
+                "Link"
+            ]
+        },
+        "text": "Contact GitHub Support"
+    },
+    {
+        "tag": "button",
+        "attributes": {
+            "type": "button",
+            "class": [
+                "Link--secondary",
+                "underline-on-hover",
+                "border-0",
+                "p-0",
+                "color-bg-transparent"
+            ],
+            "data-action": "click:cookie-consent-link#showConsentManagement",
+            "data-analytics-event": "{\"location\":\"footer\",\"action\":\"cookies\",\"context\":\"subfooter\",\"tag\":\"link\",\"label\":\"cookies_link_subfooter_footer\"}"
+        },
+        "text": "Manage cookies"
+    },
+    {
+        "tag": "button",
+        "attributes": {
+            "type": "button",
+            "class": [
+                "Link--secondary",
+                "underline-on-hover",
+                "border-0",
+                "p-0",
+                "color-bg-transparent"
+            ],
+            "data-action": "click:cookie-consent-link#showConsentManagement",
+            "data-analytics-event": "{\"location\":\"footer\",\"action\":\"dont_share_info\",\"context\":\"subfooter\",\"tag\":\"link\",\"label\":\"dont_share_info_link_subfooter_footer\"}"
+        },
+        "text": "Do not share my personal information"
+    },
+    {
+        "tag": "div",
+        "attributes": {
+            "id": "ajax-error-message",
+            "class": [
+                "ajax-error-message",
+                "flash",
+                "flash-error"
+            ],
+            "hidden": ""
+        },
+        "text": "You can\u2019t perform that action at this time."
+    },
+    {
+        "tag": "button",
+        "attributes": {
+            "type": "button",
+            "class": [
+                "flash-close",
+                "js-ajax-error-dismiss"
+            ],
+            "aria-label": "Dismiss error"
+        },
+        "text": ""
+    },
+    {
+        "tag": "button",
+        "attributes": {
+            "class": [
+                "Box-btn-octicon",
+                "m-0",
+                "btn-octicon",
+                "position-absolute",
+                "right-0",
+                "top-0"
+            ],
+            "type": "button",
+            "aria-label": "Close dialog",
+            "data-close-dialog": ""
+        },
+        "text": ""
+    },
+    {
+        "tag": "div",
+        "attributes": {
+            "class": [
+                "octocat-spinner",
+                "my-6",
+                "js-details-dialog-spinner"
+            ]
+        },
+        "text": ""
+    },
+    {
+        "tag": "div",
+        "attributes": {
+            "class": [
+                "Popover",
+                "js-hovercard-content",
+                "position-absolute"
+            ],
+            "style": "display: none; outline: none;"
+        },
+        "text": ""
+    },
+    {
+        "tag": "div",
+        "attributes": {
+            "class": [
+                "Popover-message",
+                "Popover-message--bottom-left",
+                "Popover-message--large",
+                "Box",
+                "color-shadow-large"
+            ],
+            "style": "width:360px;"
+        },
+        "text": ""
+    },
+    {
+        "tag": "div",
+        "attributes": {
+            "class": [
+                "zeroclipboard-container",
+                "position-absolute",
+                "right-0",
+                "top-0"
+            ]
+        },
+        "text": ""
+    },
+    {
+        "tag": "div",
+        "attributes": {
+            "class": [
+                "zeroclipboard-container"
+            ]
+        },
+        "text": ""
+    },
+    {
+        "tag": "div",
+        "attributes": {
+            "id": "js-global-screen-reader-notice",
+            "class": [
+                "sr-only",
+                "mt-n1"
+            ],
+            "aria-live": "polite",
+            "aria-atomic": "true"
+        },
+        "text": ""
+    },
+    {
+        "tag": "div",
+        "attributes": {
+            "id": "js-global-screen-reader-notice-assertive",
+            "class": [
+                "sr-only",
+                "mt-n1"
+            ],
+            "aria-live": "assertive",
+            "aria-atomic": "true"
+        },
+        "text": ""
+    }
+]

@@ -1,243 +1,350 @@
 ## Figma Design Analysis Report: Time Table System
 
-This report provides a structured analysis of the provided Figma design JSON data, focusing on UI/UX elements and interactive behaviors relevant for test case generation.
+This report provides a detailed analysis of the Figma design JSON provided, structured for comprehensive test case generation.
 
-**I. Page Structure & Components:**
+**I. Overall Structure & Navigation:**
 
-*   **Document:** Root element, scrolls vertically.
-    *   **Page 1 (Canvas):** Contains all visible design elements.
-        *   **Login (Frame):** The login screen.
-            *   **Group 1 (Group):** Contains Email, Password, and Submit components.
-                *   **OB Forms/Email (Instance):** Email input form (component instance).
-                    *   **Email (Text):** Label "Email" above the input field. Black color, Inter font, 14px.
-                    *   **Frame (Frame):** Container for the input field.
-                        *   **Name (Text):** Placeholder "Email" inside the input field. Light Gray Color, Inter font, 14px.
-                    *   Properties:
-                        *   Blend Mode: PASS_THROUGH
-                        *   Clips Content: True
-                        *   Fills: White background
-                        *   Stroke: Light Gray Border
-                        *   Border Radius: 5
-                        *   Padding: 15px Left and Right, 10px Top and Bottom
-                        *   Font : Inter Regular 400
-                *   **OB Forms/Password (Instance):** Password input form (component instance).
-                    *   **Password (Text):** Label "Password" above the input field. Black color, Inter font, 14px.
-                    *   **Frame (Frame):** Container for the input field.
-                        *   **Name (Text):** Placeholder "Password" inside the input field. Light Gray Color, Inter font, 14px.
-                    *   Properties:
-                        *   Blend Mode: PASS_THROUGH
-                        *   Clips Content: True
-                        *   Fills: White background
-                        *   Stroke: Light Gray Border
-                        *   Border Radius: 5
-                        *   Padding: 15px Left and Right, 10px Top and Bottom
-                        *   Font : Inter Regular 400
-                *   **OB Forms/Submit (Instance):** Submit button (component instance).
-                    *   **Name (Text):** Label "Submit" inside the button. White color, Inter font, 14px, center aligned.
-                    *   Properties:
-                        *   Blend Mode: PASS_THROUGH
-                        *   Clips Content: False
-                        *   Fills: Purple Background
-                        *   Stroke: Purple Border
-                        *   Border Radius: 5
-                        *   Padding: 15px Left and Right, 10px Top and Bottom
-                        *   Font : Inter Regular 400
-                    *   Interaction: On Click, navigates to classroom screen. (Drag interaction with smart animation to classroom screen)
-        *   **classroom (Frame):** The Classroom names screen.
-            *   **Rectangle 1 (Rectangle):** A rectangle at the top of the page.
-            *   **Group 2 (Group):** Contains Number inputs and Next button
-                *   **OB Forms/Number (Instance):** Number input form(Classroom 1 input).
-                    *   **Number(Text):** Label "Number" above the input field. Black color, Inter font, 14px.
-                    *   **Frame (Frame):** Container for the input field.
-                        *   **Name (Text):** Placeholder "Number" inside the input field. Light Gray Color, Inter font, 14px.
-                *   **OB Forms/Number (Instance):** Number input form(Classroom 2 input).
-                    *   **Number(Text):** Label "Number" above the input field. Black color, Inter font, 14px.
-                    *   **Frame (Frame):** Container for the input field.
-                        *   **Name (Text):** Placeholder "Number" inside the input field. Light Gray Color, Inter font, 14px.
-                *   **OB Forms/Number (Instance):** Number input form(Classroom 3 input).
-                    *   **Number(Text):** Label "Number" above the input field. Black color, Inter font, 14px.
-                    *   **Frame (Frame):** Container for the input field.
-                        *   **Name (Text):** Placeholder "Number" inside the input field. Light Gray Color, Inter font, 14px.
-                *   **OB Forms/Next (Instance):** Submit button (component instance).
-                    *   **Name (Text):** Label "Next" inside the button. White color, Inter font, 14px, center aligned.
-                    *   Properties:
-                        *   Blend Mode: PASS_THROUGH
-                        *   Clips Content: False
-                        *   Fills: Purple Background
-                        *   Stroke: Purple Border
-                        *   Border Radius: 5
-                        *   Padding: 15px Left and Right, 10px Top and Bottom
-                        *   Font : Inter Regular 400
-                    *   Interaction: On Click, navigates to teachers Screen with slide transition
-                *   Enter Classroom Names Label Text
-        *   **subjects (Frame):** The subjects screen.
-            *   **Rectangle 1 (Rectangle):** A rectangle at the top of the page.
-            *   **Subjects Text Label**
-        *   **teachers (Frame):** The teachers screen.
-            *   **OB Forms/Teacher Name (Instance):** Teacher Name input form.
-                *   **Teacher Name (Text):** Label "Teacher Name" above the input field. Black color, Inter font, 14px.
-                *   **Frame (Frame):** Container for the input field.
-                    *   **Name (Text):** Placeholder "Teacher Name" inside the input field. Light Gray Color, Inter font, 14px.
-            *   **OB Forms/Subjects (Instance):** Subjects input form.
-                *   **Subjects (Text):** Label "Subjects" above the input field. Black color, Inter font, 14px.
-                *   **Frame (Frame):** Container for the input field.
-                    *   **Name (Text):** Placeholder "Subjects" inside the input field. Light Gray Color, Inter font, 14px.
-            *   **OB Forms/Teacher Name (Instance):** Teacher Name input form.
-                *   **Teacher Name (Text):** Label "Teacher Name" above the input field. Black color, Inter font, 14px.
-                *   **Frame (Frame):** Container for the input field.
-                    *   **Name (Text):** Placeholder "Teacher Name" inside the input field. Light Gray Color, Inter font, 14px.
-            *   **OB Forms/Subjects (Instance):** Subjects input form.
-                *   **Subjects (Text):** Label "Subjects" above the input field. Black color, Inter font, 14px.
-                *   **Frame (Frame):** Container for the input field.
-                    *   **Name (Text):** Placeholder "Subjects" inside the input field. Light Gray Color, Inter font, 14px.
-            *   **OB Forms/Teacher Name (Instance):** Teacher Name input form.
-                *   **Teacher Name (Text):** Label "Teacher Name" above the input field. Black color, Inter font, 14px.
-                *   **Frame (Frame):** Container for the input field.
-                    *   **Name (Text):** Placeholder "Teacher Name" inside the input field. Light Gray Color, Inter font, 14px.
-            *   **OB Forms/Subjects (Instance):** Subjects input form.
-                *   **Subjects (Text):** Label "Subjects" above the input field. Black color, Inter font, 14px.
-                *   **Frame (Frame):** Container for the input field.
-                    *   **Name (Text):** Placeholder "Subjects" inside the input field. Light Gray Color, Inter font, 14px.
-            *   **OB Forms/Teacher Name (Instance):** Teacher Name input form.
-                *   **Teacher Name (Text):** Label "Teacher Name" above the input field. Black color, Inter font, 14px.
-                *   **Frame (Frame):** Container for the input field.
-                    *   **Name (Text):** Placeholder "Teacher Name" inside the input field. Light Gray Color, Inter font, 14px.
-            *   **OB Forms/Subjects (Instance):** Subjects input form.
-                *   **Subjects (Text):** Label "Subjects" above the input field. Black color, Inter font, 14px.
-                *   **Frame (Frame):** Container for the input field.
-                    *   **Name (Text):** Placeholder "Subjects" inside the input field. Light Gray Color, Inter font, 14px.
-            *   **OB Forms/Add (Instance):** Submit button (component instance).
-                *   **Name (Text):** Label "Add" inside the button. White color, Inter font, 14px, center aligned.
-                *   Properties:
-                    *   Blend Mode: PASS_THROUGH
-                    *   Clips Content: False
-                    *   Fills: Purple Background
-                    *   Stroke: Purple Border
-                    *   Border Radius: 5
-                    *   Padding: 15px Left and Right, 10px Top and Bottom
-                    *   Font : Inter Regular 400
-                    *   Interaction: On Click, navigates to class screen with slide transition
+*   **Document:** Root node, containing all design elements.
+*   **Pages:**
+    *   **Page 1:** Contains the main application design.
+        *   Consists of multiple Frames representing different screens.
+*   **Screen Flow:** The design outlines a user flow starting with a login screen and progressing through classroom setup, teacher assignment, and subject selection.
 
-        *   **class (Frame):** The class screen.
-            *   **OB Forms/Class (Instance):** Class input form.
-                *   **Class (Text):** Label "Class" above the input field. Black color, Inter font, 14px.
-                *   **Frame (Frame):** Container for the input field.
-                    *   **Name (Text):** Placeholder "Class" inside the input field. Light Gray Color, Inter font, 14px.
-            *   **OB Forms/b1 (Instance):** b1 input form.
-                *   **b1 (Text):** Label "b1" above the input field. Black color, Inter font, 14px.
-                *   **Frame (Frame):** Container for the input field.
-                    *   **Name (Text):** Placeholder "b1" inside the input field. Light Gray Color, Inter font, 14px.
-            *   **OB Forms/B2 (Instance):** B2 input form.
-                *   **B2 (Text):** Label "B2" above the input field. Black color, Inter font, 14px.
-                *   **Frame (Frame):** Container for the input field.
-                    *   **Name (Text):** Placeholder "B2" inside the input field. Light Gray Color, Inter font, 14px.
-            *   **OB Forms/phy (Instance):** phy input form.
-                *   **phy (Text):** Label "phy" above the input field. Black color, Inter font, 14px.
-                *   **Frame (Frame):** Container for the input field.
-                    *   **Name (Text):** Placeholder "phy" inside the input field. Light Gray Color, Inter font, 14px.
-            *   **OB Forms/chem (Instance):** chem input form.
-                *   **chem (Text):** Label "chem" above the input field. Black color, Inter font, 14px.
-                *   **Frame (Frame):** Container for the input field.
-                    *   **Name (Text):** Placeholder "chem" inside the input field. Light Gray Color, Inter font, 14px.
-           *   **OB Forms/Next (Instance):** Next button (component instance).
-                *   **Name (Text):** Label "Next" inside the button. White color, Inter font, 14px, center aligned.
-                *   Properties:
-                    *   Blend Mode: PASS_THROUGH
-                    *   Clips Content: False
-                    *   Fills: Purple Background
-                    *   Stroke: Purple Border
-                    *   Border Radius: 5
-                    *   Padding: 15px Left and Right, 10px Top and Bottom
-                    *   Font : Inter Regular 400
-        *   **Signup (Frame):** The Signup screen.
-            *   **OB Forms/Name (Instance):** Name input form.
-                *   **Name (Text):** Label "Name" above the input field. Black color, Inter font, 14px.
-                *   **Frame (Frame):** Container for the input field.
-                    *   **Name (Text):** Placeholder "Name" inside the input field. Light Gray Color, Inter font, 14px.
-            *   **OB Forms/email (Instance):** email input form.
-                *   **Email (Text):** Label "email" above the input field. Black color, Inter font, 14px.
-                *   **Frame (Frame):** Container for the input field.
-                    *   **Name (Text):** Placeholder "email" inside the input field. Light Gray Color, Inter font, 14px.
-            *   **OB Forms/password (Instance):** password input form.
-                *   **Password (Text):** Label "password" above the input field. Black color, Inter font, 14px.
-                *   **Frame (Frame):** Container for the input field.
-                    *   **Name (Text):** Placeholder "password" inside the input field. Light Gray Color, Inter font, 14px.
-            *   **OB Forms/confirm Password (Instance):** confirm Password input form.
-                *   **confirm Password (Text):** Label "confirm Password" above the input field. Black color, Inter font, 14px.
-                *   **Frame (Frame):** Container for the input field.
-                    *   **Name (Text):** Placeholder "confirm Password" inside the input field. Light Gray Color, Inter font, 14px.
-            *   **OB Forms/Signup (Instance):** Submit button (component instance).
-                *   **Name (Text):** Label "Signup" inside the button. White color, Inter font, 14px, center aligned.
-                *   Properties:
-                    *   Blend Mode: PASS_THROUGH
-                    *   Clips Content: False
-                    *   Fills: Purple Background
-                    *   Stroke: Purple Border
-                    *   Border Radius: 5
-                    *   Padding: 15px Left and Right, 10px Top and Bottom
-                    *   Font : Inter Regular 400
-                    *   Interaction: On Click, navigates to classroom screen.
-         *   **OB Forms/Next (Instance):** Next button (component instance).
-                *   **Name (Text):** Label "Next" inside the button. White color, Inter font, 14px, center aligned.
-                *   Properties:
-                    *   Blend Mode: PASS_THROUGH
-                    *   Clips Content: False
-                    *   Fills: Purple Background
-                    *   Stroke: Purple Border
-                    *   Border Radius: 5
-                    *   Padding: 15px Left and Right, 10px Top and Bottom
-                    *   Font : Inter Regular 400
-                    *   Interaction: On Click, navigates to teachers Screen with slide transition
+**II. UI Components & Their Properties:**
 
-**II. Visual & Styling Properties:**
+**A. Login Screen (Frame: "Login")**
 
-*   **Colors:**
-    *   Background: Light Grey (#D9D9D9) - used for top bars.
-    *   Text:
-        *   Black (#000000) - used for labels and some text
-        *   Light Gray (#D1D1D1) - used for placeholders
-        *   White (#FFFFFF) - used for button text
-    *   Button: Purple (#5E5BC8) used for the backgrounds
-*   **Fonts:**
-    *   Inter (Regular 400) is the primary font for all text.
-*   **Typography:** 14px font size is primarily used
-*   **Spacing:** Consistent padding and margins are used across similar components.
-*   **Borders:** Light grey and purple for form elements, with a consistent border-radius of 5px.
+*   **Frame:** Root container for the Login screen elements.
+    *   Dimensions: 1280x832, located at -746,-986
+    *   Background: Solid white color.
+*   **Group: "Group 1"**: Encapsulates login form elements.
+    *   **Instance: "OB Forms/Email"**: Email Input Field
+        *   Component ID: 8:49
+        *   Properties: Variant = "default".
+        *   Overrides: Height, Width.
+        *   Children:
+            *   **Text: "Email"**: Label for the email input. Black color, Inter font, Regular, size 14px.
+            *   **Frame**: Enclosing frame for the input area.
+                *   Background: Solid white.
+                *   Stroke: Light gray border (R: 0.886, G: 0.882, B: 0.898).
+                *   Corner Radius: 5px
+                *   Padding: Left 15px, Right 15px, Top 10px, Bottom 10px.
+                *   **Text**: Input placeholder text "Email." Light gray color, Inter font, Regular, size 14px.
+    *   **Instance: "OB Forms/Password"**: Password Input Field.
+        *   Component ID: 8:59
+        *   Properties: Variant = "default".
+        *   Overrides: Height, Width.
+        *   Children:
+            *   **Text: "Password"**: Label for the password input. Black color, Inter font, Regular, size 14px.
+            *   **Frame**: Enclosing frame for the input area.
+                *   Background: Solid white.
+                *   Stroke: Light gray border.
+                *   Corner Radius: 5px.
+                *   Padding: Left 15px, Right 15px, Top 10px, Bottom 10px.
+                *   **Text**: Input placeholder text "Password." Light gray color, Inter font, Regular, size 14px.
+    *   **Instance: "OB Forms/Submit"**: Submit Button
+        *   Component ID: 8:69
+        *   Properties: Variant = "default".
+        *   Overrides: CounterAxisSizingMode, Height, Width, PrimaryAxisSizingMode.
+        *   Children:
+            *   **Text:** "Submit." White color, Inter font, Regular, size 14px, text-align: center.
+        *   Background: Blue color.
+        *   Corner Radius: 5px.
+        *   Padding: Left 15px, Right 15px, Top 10px, Bottom 10px.
+*   **Interaction**: Click on "OB Forms/Submit" navigates to a classroom frame (1:7) if authentication succeeds ( SRS Document needed to decide this part) and Drag from login frame (1:5) navigates to  another Login frame (1:7)
 
-**III. Interactive Behavior:**
+**B. Classroom Setup Screen (Frame: "classroom")**
 
-*   **Button States**: Buttons have default and hover states, indicated by color changes and, potentially, other visual cues as defined in their component sets(But there is no other states defined).
-*   **Navigation**: "Submit" buttons redirect between screens with interactions (e.g., navigate to the classroom and teacher Screens).
-*  On Classroom Page Next button navigates with slide transition.
+*   **Rectangle:** Top navigation bar.
+    *   Background: Light gray.
+    *   Dimensions: 1280x93, located at -746, -117.
+*   **Group: "Group 2"**: Contains classroom name form elements.
+    *   **Instance: "OB Forms/Number"**: Number Input Field 1 (Classroom 1 Name).
+        *   Component ID: 8:227
+        *   Properties: Variant = "default".
+        *   Children:
+            *   **Text: "Number"**: Label for the input. Black color, Inter font, Regular, size 14px.
+            *   **Frame**: Enclosing frame for the input area.
+                *   Background: Solid white.
+                *   Stroke: Light gray border.
+                *   Corner Radius: 5px
+                *   Padding: Left 15px, Right 15px, Top 10px, Bottom 10px.
+                *   **Text**: Input placeholder text "Number". Light gray color, Inter font, Regular, size 14px.
+        *  Located at -256, 193 of 300x84 size
+    *   **Instance: "OB Forms/Number"**: Number Input Field 2 (Classroom 2 Name).
+        *   Component ID: 8:227
+        *   Properties: Variant = "default".
+        *   Children:
+            *   **Text: "Number"**: Label for the input. Black color, Inter font, Regular, size 14px.
+            *   **Frame**: Enclosing frame for the input area.
+                *   Background: Solid white.
+                *   Stroke: Light gray border.
+                *   Corner Radius: 5px
+                *   Padding: Left 15px, Right 15px, Top 10px, Bottom 10px.
+                *   **Text**: Input placeholder text "Number". Light gray color, Inter font, Regular, size 14px.
+    *   **Instance: "OB Forms/Number"**: Number Input Field 3 (Classroom 3 Name).
+        *   Component ID: 8:227
+        *   Properties: Variant = "default".
+        *   Children:
+            *   **Text: "Number"**: Label for the input. Black color, Inter font, Regular, size 14px.
+            *   **Frame**: Enclosing frame for the input area.
+                *   Background: Solid white.
+                *   Stroke: Light gray border.
+                *   Corner Radius: 5px
+                *   Padding: Left 15px, Right 15px, Top 10px, Bottom 10px.
+                *   **Text**: Input placeholder text "Number". Light gray color, Inter font, Regular, size 14px.
+    *   **Instance: "OB Forms/Next"**: Next Button
+        *   Component ID: 8:237
+        *   Overrides: counterAxisSizingMode, Height, Width, primaryAxisSizingMode
+        *   Children:
+            *   **Text:** "Next". White color, Inter font, Regular, size 14px, text-align: center.
+        *   Background: Blue color.
+        *   Corner Radius: 5px.
+        *   Padding: Left 15px, Right 15px, Top 10px, Bottom 10px.
+*  **Text:** "Enter Classroom Names". Black color, Inter font, Regular, size 14px
+*   **Interactions:**  Click on "OB Forms/Next" navigates to the "subjects" frame (8:275).
 
-**IV. Navigation Flow:**
+**C. Subject Selection Screen (Frame: "subjects")**
 
-1.  **Login:** Initial screen.
-    *   Click "Submit" (Login) -> Classroom Screen
-2.   **classroom:** Classroom page.
-    *   Click "Next" (Classroom Screen) -> Teacher Screen
-3.  **Signup:**
-    *   Click "Signup" -> classroom screen
+*   **Rectangle:** Top navigation bar.
+    *   Background: Light gray.
+    *   Dimensions: 1280x93, located at -746, 752.
+*   **Text:** "Subjects" Black color, Inter font, Regular, size 14px
+* Not fully designed, only contains Top bar Text "subjects"
 
-**V. Potential Test Cases and Scenarios:**
+**D. Teacher Assignment Screen (Frame: "teachers")**
 
-1.  **Functional:**
-    *   Verify successful login with valid credentials.
-    *   Verify correct redirection to the classroom screen after login.
-    *   Verify input fields accept valid data (e.g. email format).
-    *   Validate next buttons redirect to respective screen
-2.  **UI/UX:**
-    *   Ensure consistent font usage and color scheme across all screens.
-    *   Verify that button text is legible and properly contrasted against the background.
-    *   Check component alignment and spacing, especially within forms and grids.
-3.  **Edge Cases:**
-    *   Test login with invalid credentials (verify error message).
-    *   Test form submission with empty required fields (verify error display).
+*  Teacher assign screen contains 4 similar "OB Forms/Teacher Name" and "OB Forms/Subject". Since all components of the section are the same and are located close to each other, so, I will explain first and last components only to avoide redundancy
+* **Instance: "OB Forms/Teacher Name"**: Teacher Name input.
+    *   Component ID: 10:51
+    *   Properties: Variant = "default".
+    *   Children:
+        *   **Text: "Teacher Name"**: Label for the input. Black color, Inter font, Regular, size 14px.
+        *   **Frame**: Enclosing frame for the input area.
+            *   Background: Solid white.
+            *   Stroke: Light gray border.
+            *   Corner Radius: 5px
+            *   Padding: Left 15px, Right 15px, Top 10px, Bottom 10px.
+            *   **Text**: Input placeholder text "Teacher Name". Light gray color, Inter font, Regular, size 14px.
+        * Located at x: 876, y: 72 of 300x84 size
+*   **Instance: "OB Forms/Subjects"**: Subject selection dropdown.
+    *   Component ID: 10:61
+    *   Properties: Variant = "default".
+    *   Children:
+        *   **Text: "Subjects"**: Label for the dropdown. Black color, Inter font, Regular, size 14px.
+        *   **Frame**: Enclosing frame for the dropdown.
+            *   Background: Solid white.
+            *   Stroke: Light gray border.
+            *   Corner Radius: 5px
+            *   Padding: Left 15px, Right 15px, Top 10px, Bottom 10px.
+            *   **Text**: Input placeholder text "Subjects". Light gray color, Inter font, Regular, size 14px.
+   * Located at x: 1251, y: 72 of 300x84 size
+* **Instance: "OB Forms/Teacher Name"**: Teacher Name input.
+    *   Component ID: 10:51
+    *   Properties: Variant = "default".
+    *   Children:
+        *   **Text: "Teacher Name"**: Label for the input. Black color, Inter font, Regular, size 14px.
+        *   **Frame**: Enclosing frame for the input area.
+            *   Background: Solid white.
+            *   Stroke: Light gray border.
+            *   Corner Radius: 5px
+            *   Padding: Left 15px, Right 15px, Top 10px, Bottom 10px.
+            *   **Text**: Input placeholder text "Teacher Name". Light gray color, Inter font, Regular, size 14px.
+     * Located at x: 876, y: 156 of 300x84 size
+*   **Instance: "OB Forms/Subjects"**: Subject selection dropdown.
+    *   Component ID: 10:61
+        *   Properties: Variant = "default".
+    *   Children:
+        *   **Text: "Subjects"**: Label for the dropdown. Black color, Inter font, Regular, size 14px.
+        *   **Frame**: Enclosing frame for the dropdown.
+            *   Background: Solid white.
+            *   Stroke: Light gray border.
+            *   Corner Radius: 5px
+            *   Padding: Left 15px, Right 15px, Top 10px, Bottom 10px.
+            *   **Text**: Input placeholder text "Subjects". Light gray color, Inter font, Regular, size 14px.
+   * Located at x: 1251, y: 156 of 300x84 size
+*   **Instance: "OB Forms/Add"**: Assign Button.
+    *   Component ID: 10:71
+    * Transition Ease and Duration are overridden with ease out for 300ms
+    *   Children:
+        *   **Text:** "Add". White color, Inter font, Regular, size 14px, text-align: center.
+        *   Background: Blue color.
+        *   Corner Radius: 5px.
+        *   Padding: Left 15px, Right 15px, Top 10px, Bottom 10px.
+*    **Interactions:** Click on "OB Forms/Add" navigates to "class" frame (11:544)
+*  No Next button for the page
 
-**VI. Accessibility Considerations:**
+**E. Assign Class Screen (Frame: "class")**
+* Has similar structure like Teacher Assign screen, So following the same rule explained in the Teacher screen description section
+* **Instance: "OB Forms/Class"**: Class Name input.
+    *   Component ID: 11:595
+    *   Properties: Variant = "default".
+    *   Children:
+        *   **Text: "Class"**: Label for the input. Black color, Inter font, Regular, size 14px.
+        *   **Frame**: Enclosing frame for the input area.
+            *   Background: Solid white.
+            *   Stroke: Light gray border.
+            *   Corner Radius: 5px
+            *   Padding: Left 15px, Right 15px, Top 10px, Bottom 10px.
+            *   **Text**: Input placeholder text "Class". Light gray color, Inter font, Regular, size 14px.
+        * Located at x: 2384, y: 121 of 300x84 size
+*   **Instance: "OB Forms/b1"**: Subject selection dropdown 1.
+    *   Component ID: 11:605
+    *   Properties: Variant = "default".
+    *   Children:
+        *   **Text: "b1"**: Label for the dropdown. Black color, Inter font, Regular, size 14px.
+        *   **Frame**: Enclosing frame for the dropdown.
+            *   Background: Solid white.
+            *   Stroke: Light gray border.
+            *   Corner Radius: 5px
+            *   Padding: Left 15px, Right 15px, Top 10px, Bottom 10px.
+        * Located at x: 2384, y: 205 of 300x84 size
+*   **Instance: "OB Forms/chem"**: Subject selection dropdown 4.
+    *   Component ID: 11:625
+    *   Properties: Variant = "default".
+    *   Children:
+        *   **Text: "chem"**: Label for the dropdown. Black color, Inter font, Regular, size 14px.
+        *   **Frame**: Enclosing frame for the dropdown.
+            *   Background: Solid white.
+            *   Stroke: Light gray border.
+            *   Corner Radius: 5px
+            *   Padding: Left 15px, Right 15px, Top 10px, Bottom 10px.
+     * Located at x: 2539, y: 283 of 300x84 size
+*   **Instance: "OB Forms/Next"**: Next Button
+    *   Component ID: 11:645
+    *   Children:
+        *   **Text:** "Next". White color, Inter font, Regular, size 14px, text-align: center.
+        *   Background: Blue color.
+        *   Corner Radius: 5px.
+        *   Padding: Left 15px, Right 15px, Top 10px, Bottom 10px.
+* Located at x: 2494, y: 390 of 62x48 size
+* **Interactions:**  Click on "OB Forms/Next" navigates to the "subjects" frame (8:275).
 
-*   Ensure sufficient color contrast between text and backgrounds for legibility.
+**F. Signup Screen (Frame: "Signup")**
 
-**VII. Performance Considerations:**
+* **Instance: "OB Forms/Name"**: Name input.
+    *   Component ID: 8:113
+    *   Properties: Variant = "default".
+    *   Overrides: Height, Width.
+    *   Children:
+        *   **Text: "Name"**: Label for the name input. Black color, Inter font, Regular, size 14px.
+        *   **Frame**: Enclosing frame for the input area.
+            *   Background: Solid white.
+            *   Stroke: Light gray border.
+            *   Corner Radius: 5px
+            *   Padding: Left 15px, Right 15px, Top 10px, Bottom 10px.
+            *   **Text**: Input placeholder text "Name." Light gray color, Inter font, Regular, size 14px.
+* Located at 999, -801 of 430x84 size
+* **Instance: "OB Forms/email"**: Email input.
+    *   Component ID: 8:123
+    *   Properties: Variant = "default".
+    *   Overrides: Height, Width.
+    *   Children:
+        *   **Text: "email"**: Label for the email input. Black color, Inter font, Regular, size 14px.
+        *   **Frame**: Enclosing frame for the input area.
+            *   Background: Solid white.
+            *   Stroke: Light gray border.
+            *   Corner Radius: 5px
+            *   Padding: Left 15px, Right 15px, Top 10px, Bottom 10px.
+            *   **Text**: Input placeholder text "email." Light gray color, Inter font, Regular, size 14px.
+* Located at 999, -717 of 430x84 size
+* **Instance: "OB Forms/password"**: Password input.
+    *   Component ID: 8:133
+    *   Properties: Variant = "default".
+    *   Overrides: Height, Width.
+    *   Children:
+        *   **Text: "password"**: Label for the password input. Black color, Inter font, Regular, size 14px.
+        *   **Frame**: Enclosing frame for the input area.
+            *   Background: Solid white.
+            *   Stroke: Light gray border.
+            *   Corner Radius: 5px
+            *   Padding: Left 15px, Right 15px, Top 10px, Bottom 10px.
+            *   **Text**: Input placeholder text "password." Light gray color, Inter font, Regular, size 14px.
+* Located at 999, -633 of 430x84 size
+* **Instance: "OB Forms/confirm Password"**: Confirm Password input.
+    *   Component ID: 8:143
+    *   Properties: Variant = "default".
+    *   Overrides: Height, Width.
+    *   Children:
+        *   **Text: "confirm Password"**: Label for the confirm Password input. Black color, Inter font, Regular, size 14px.
+        *   **Frame**: Enclosing frame for the input area.
+            *   Background: Solid white.
+            *   Stroke: Light gray border.
+            *   Corner Radius: 5px
+            *   Padding: Left 15px, Right 15px, Top 10px, Bottom 10px.
+            *   **Text**: Input placeholder text "confirm Password." Light gray color, Inter font, Regular, size 14px.
+* Located at 999, -536 of 430x84 size
+*   **Instance: "OB Forms/Signup"**: Signup Button
+    *   Component ID: 8:153
+     * Transition Ease and Duration are overridden with ease out for 300ms
+    *   Children:
+        *   **Text:** "Signup". White color, Inter font, Regular, size 14px, text-align: center.
+        *   Background: Blue color.
+        *   Corner Radius: 5px.
+        *   Padding: Left 15px, Right 15px, Top 10px, Bottom 10px.
+        *   Located at 1176, -414 of 76x48 size
+* Located at 1176, -414 of 76x48 size
+    *   **Interactions:** Click on "OB Forms/Signup" navigates to "classroom" frame (1:7).
+*  **Instance: "OB Forms/Next"**: Next Button
+   * Transtion Ease and Duration are overridden with ease out for 300ms
+     * Properties: Variant = "default".
+     * Located at -149, 1291 of 60x37 size
+    *  **Interactions:** Click on "OB Forms/Next" navigates to "teachers" frame (1:8).
 
-*   None apparent from the design data. Consider any load testing that the API's might create.
+**III. Component Properties & Styling:**
+
+*   **Color Palette:**
+    *   Primary Blue: R: 0.369, G: 0.357, B: 1.0, A: 1.0 (Used for Submit and Next buttons).
+    *   White: R: 1.0, G: 1.0, B: 1.0, A: 1.0 (Background for input fields, text color on primary buttons).
+    *   Light Gray (Stroke): R: 0.886, G: 0.882, B: 0.898, A: 1.0 (Border for input fields).
+    *   Light Gray (Background): R: 0.851, G: 0.851, B: 0.851, A: 1.0 (Top navigation bar).
+    *  Text Color: R:0.0,G:0.0,B:0.0,A:1.0 (Black text color)
+
+*   **Typography:**
+    *   Font Family: Inter.
+    *   Font Weight: Regular (400).
+    *   Font Size: 14px (Used for labels, input placeholders, and button text).
+    *   Line Height: 28px (165.258% of font size).
+
+*   **Input Fields:**
+    *   Background: Solid white.
+    *   Border: Light gray with 1px thickness.
+    *   Corner Radius: 5px.
+    *   Padding: 15px left/right, 10px top/bottom.
+*   **Buttons:**
+    *   Background: Solid Blue.
+    *   Corner Radius: 5px.
+    *   Padding: 15px left/right, 10px top/bottom.
+    *   Text Alignment: Center.
+
+**IV. Interactions & Dynamic Behavior:**
+
+*   **Login Submit:** On click, submit credentials for authentication and navigate to the "classroom" screen upon successful authentication. (Requires SRS to confirm successful navigation.)
+*   **Navigation:** "Next" button(s) used for sequential progression through setup steps. Click navigation triggers transitions between screens.
+*   **Component States:** The component set structure indicates the presence of "default", "disabled", "error", "focus", and "hover" states for common UI elements. (Requires state-specific styling details for error, focus, and hover for different screens).
+
+**V. Test Case Generation Notes:**
+
+*   **Functional Tests:**
+    *   Verify form submission on the login screen and signup screen.
+    *   Validate proper navigation between pages using "Next" buttons.
+    *   Add the subject in "subjects" frame, Teacher to "teachers" Frame and class in "class" frame
+*   **UI/UX Tests:**
+    *   Ensure consistent styling for input fields (font, color, border, padding).
+    *   Check the color contrast for accessibility (especially on buttons).
+    *   Verify the accurate visual representation of disabled, error, focus, and hover states.
+*   **Accessibility Tests:**
+    *   Evaluate keyboard navigation for all interactive elements.
+    *   Assess color contrast for text legibility.
+*   **Edge Cases:**
+    *   Test input validation (e.g., email format, password strength).
+    *   Verify appropriate error handling for invalid login attempts.
+    *   Ensure that all UI states (error, focus, disabled, hover) are visually and functionally complete.
+
+**VI. Missing Information and Further Analysis:**
+
+*   **Detailed Component State Styling:** Provide the styling for disabled, error, focus, and hover variants of all components to ensure proper visual feedback to user interactions.
+*   **Validation Rules:** Provide input validation rules and error message specifications.
+*   **SRS**: A full software requirements specification is needed to completely map out component interactions and system responses.
+
+This report offers a structured, comprehensive overview of the provided Figma design. This information is designed to facilitate the creation of effective and targeted test cases.

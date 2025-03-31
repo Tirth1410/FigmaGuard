@@ -3,7 +3,7 @@ import Header from "@/components/header"
 import Hero from "@/components/hero"
 import Features from "@/components/features"
 import TestingProcess from "@/components/testing-process"
-import Results from "@/components/results"
+// import Results from "@/components/results"
 import Footer from "@/components/footer"
 
 export default function Home() {
@@ -15,7 +15,7 @@ export default function Home() {
           <Hero />
           <Features />
           <TestingProcess />
-          <Results />
+          {/* <Results /> */}
         </main>
         <Footer />
       </ThemeProvider>

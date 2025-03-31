@@ -84,22 +84,6 @@ async function getImageUrl(keyword) {{
 }}
 ```
 
-
-to show mark down content do the following 
-
-import markdown rendered from react-mark down 
-
-```javascript 
-import MarkdownRenderer from 'react-markdown';
-```
-
-then use it as follows : 
-
-
-```javascript
-   <MarkdownRenderer markdown={{markdownText}} />
-```
-
 by the above function get images and diplay it accoding to you 
 
 inculde this function in your code the above is not implimented any where in directory 
@@ -557,6 +541,4 @@ class Website:
         self.client_port = None
         self.server_pid = None
         self.server_port = None
-
-        
         

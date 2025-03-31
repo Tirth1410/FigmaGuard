@@ -8,9 +8,11 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Upload, LinkIcon, Play, ExternalLink } from "lucide-react"
 import { cn } from "@/lib/utils"
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 
 export default function Hero() {
   const [url, setUrl] = useState("")
+  const [choice, setChoice] = useState("1") 
   const [file, setFile] = useState<File | null>(null)
   const [isLoading, setIsLoading] = useState(false)
 
@@ -24,15 +26,16 @@ export default function Hero() {
     e.preventDefault()
     setIsLoading(true)
   
-    if (!file || !url) {
-      alert("Please select a file and enter a URL before submitting.")
+    if (!file || !url || !choice) {
+      alert("Please select a file, enter a URL, and choose a test type before submitting.")
       setIsLoading(false)
       return
     }
   
     const formData = new FormData()
-    formData.append("file", file) // Ensure "file" matches Flask key
-    formData.append("url", url)   // Adding URL to form data
+    formData.append("file", file)
+    formData.append("url", url)
+    formData.append("choice", choice) // Send selected test type
   
     try {
       const response = await fetch("http://127.0.0.1:5000/api/run_test", {
@@ -43,12 +46,12 @@ export default function Hero() {
       const data = await response.json()
   
       if (response.ok) {
-        alert("File and URL uploaded successfully!")
+        alert("File, URL, and choice uploaded successfully!")
       } else {
         alert(`Error: ${data.error}`)
       }
     } catch (error) {
-      alert("Failed to upload file and URL. Please try again.")
+      alert("Failed to upload. Please try again.")
       console.error("Upload Error:", error)
     } finally {
       setIsLoading(false)
@@ -85,6 +88,48 @@ export default function Hero() {
                   <Label htmlFor="srs-upload" className="text-base font-medium mb-2 block">
                     Upload SRS Document
                   </Label>
+
+
+                  <div className="flex items-center space-x-2 mb-4">
+                  <RadioGroup
+                    defaultValue="1"
+                    className="flex items-center space-x-4"
+                    onValueChange={(value) => setChoice(value)}
+                  >
+                    <div className="flex items-center space-x-2">
+                      <RadioGroupItem value="1" id="1" />
+                      <Label htmlFor="1">Functional Testing</Label>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <RadioGroupItem value="2" id="2" />
+                      <Label htmlFor="2">UI/UX Testing</Label>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <RadioGroupItem value="3" id="3" />
+                      <Label htmlFor="3">Compatibility Testing</Label>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <RadioGroupItem value="4" id="4" />
+                      <Label htmlFor="4">Accessibility Testing</Label>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <RadioGroupItem value="5" id="5" />
+                      <Label htmlFor="5">Performance Testing</Label>
+                    </div>
+                  </RadioGroup>
+
+                  </div>
+
+
+
+
+
+
+
+
+
+
+
                   <div
                     className={cn(
                       "border-2 border-dashed rounded-lg p-6 text-center transition-all duration-300",
