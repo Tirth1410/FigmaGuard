@@ -30,17 +30,22 @@ def upload_srs():
     except Exception as e:
         return jsonify({"error": f"Failed to save file: {str(e)}"}), 500
 
-    fig_desc = get_desc_figma(url)
-    if fig_desc is None:
-        return jsonify({"error": "Failed to fetch Figma design description"}), 500
-    srs_desc = get_desc_srs(file_path)
-    if srs_desc is None:
-        return jsonify({"error": "Failed to fetch SRS description"}), 500
+
+    # Call function to process the SRS document (to be implemented)
+
+    get_desc_figma(url)
+    get_desc_srs(file_path)
+
+    
+
+
+    
+
+  
 
     return jsonify({
         "message": "SRS uploaded successfully",
-        "Figma_Description": fig_desc,
-        "SRS_Description": srs_desc
+        
         })
 
 @api_blueprint.route("/generate_test_cases", methods=["POST"])

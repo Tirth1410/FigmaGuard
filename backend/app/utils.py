@@ -4,7 +4,7 @@ import json
 from langchain_community.document_loaders import PyMuPDFLoader
 from langchain_groq import ChatGroq
 from langchain.schema import HumanMessage, SystemMessage
-from langchain.document_loaders import PyMuPDFLoader
+from langchain_community.document_loaders import PyMuPDFLoader
 from google import genai
 from dotenv import load_dotenv
 import os
@@ -86,7 +86,21 @@ def get_desc_figma(url: str):
         return None
 
     print("Figma description generated successfully.")
-    return Figma_desc.text
+
+
+    #save location text file
+    file_path = "data/figma_desc.txt"
+
+    os.makedirs(os.path.dirname(file_path), exist_ok=True)
+
+    with open(file_path, "w") as file:
+        file.write(Figma_desc.text)
+        print(f"Figma description saved to {file_path}")
+
+
+    # return Figma_desc.text
+
+
 
 def get_desc_srs(pdf_path: str):
     """
@@ -158,4 +172,14 @@ def get_desc_srs(pdf_path: str):
         return None
 
     print("SRS description generated successfully.")
-    return SRS_desc.text
+
+
+    # Save the generated description to a text file
+
+    file_path = "data/srs_desc.txt"
+    os.makedirs(os.path.dirname(file_path), exist_ok=True)
+
+    with open (file_path, "w") as file:
+        file.write(SRS_desc.text)
+        print(f"SRS description saved to {file_path}")
+    # return SRS_desc.text
