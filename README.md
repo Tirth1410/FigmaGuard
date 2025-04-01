@@ -18,6 +18,9 @@ Figma Guard is an AI-powered testing tool designed to validate Figma designs and
 - **UI Consistency Testing**: Detects inconsistencies in design elements.
 - **Detailed Reports**: Provides insights into test results and potential issues.
 
+## 📺 Demo  (Video)
+[![Figma Guard Demo](https://img.youtube.com/vi/n7-WQHQ05jw/maxresdefault.jpg)](https://www.youtube.com/watch?v=n7-WQHQ05jw&autoplay=1)
+
 ## 📥 Installation
 ```bash
 # Clone the repository
@@ -65,4 +68,3 @@ This project was built as part of a hackathon to showcase AI-powered design vali
 ---
 
 🔥 **Figma Guard - Ensuring Design Accuracy with AI!**
-
