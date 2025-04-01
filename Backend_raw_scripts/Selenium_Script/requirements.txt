@@ -1,0 +1,5 @@
+selenium
+pytest
+allure-pytest
+requests
+openai  # If needed for Gemini/Groq API calls
