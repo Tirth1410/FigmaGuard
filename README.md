@@ -19,12 +19,12 @@ Figma Guard is an AI-powered testing tool designed to validate Figma designs and
 - **Detailed Reports**: Provides insights into test results and potential issues.
 
 ## 📺 Demo  (Video)
-[![Figma Guard Demo](https://img.youtube.com/vi/n7-WQHQ05jw/maxresdefault.jpg)](https://www.youtube.com/watch?v=n7-WQHQ05jw&autoplay=1)
+[![Figma Guard Demo](https://img.youtube.com/vi/n7-WQHQ05jw/maxresdefault.jpg)](https://youtu.be/d77nadIneo8?si=YhOtHarb9VnboXfk)
 
 ## 📥 Installation
 ```bash
 # Clone the repository
-git clone https://github.com/Bhaumil111/FigmaGuard.git
+https://github.com/P1Manav/FigmaGuard.git
 
 # Navigate to the project directory
 cd FigmaGuard
