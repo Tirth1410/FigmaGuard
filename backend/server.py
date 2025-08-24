@@ -634,7 +634,20 @@ def health_check():
         "timestamp": datetime.now(timezone.utc).isoformat()
     }), 200
 
+def ping_self():
+    """Keep server alive by pinging /health every 40 sec"""
+    while True:
+        try:
+            url = os.environ.get("RENDER_URL", "http://localhost:5000") + "/health"
+            requests.get(url, timeout=10)
+            print(f"[KeepAlive] Pinged {url}")
+        except Exception as e:
+            print(f"[KeepAlive] Failed to ping: {e}")
+        time.sleep(40)
+
 if __name__ == '__main__':
+
+    threading.Thread(target=ping_self, daemon=True).start()
     try:
         subprocess.run(["playwright", "install"], check=True)
         print(" Playwright browsers installed")
