@@ -1,7 +1,7 @@
 # FigmaGuard - Automated Testing Platform
 
 <div align="center">
-  <img src="/placeholder.svg?height=120&width=120" alt="FigmaGuard Logo" width="120" height="120">
+  <a href="https://imgbb.com/"><img src="https://i.ibb.co/ns7cyWQL/Screenshot-2025-08-25-234055.png" alt="Screenshot-2025-08-25-234055" border="0"></a>
   
   **Automated testing platform for validating designs and web applications against Software Requirements Specification (SRS) documents.**
   
@@ -29,7 +29,7 @@
 2. **Generate & Test** - AI creates websites from SRS requirements, deploys to Vercel, then tests
 
 ### 🤖 **AI-Powered Website Generation**
-- Uses Groq LLM (Llama 3) for code generation
+- Uses Groq LLM for code generation
 - Creates responsive HTML/CSS/JavaScript websites
 - Automatic GitHub repository creation
 - One-click Vercel deployment
@@ -50,7 +50,7 @@
 ## 🛠️ Tech Stack
 
 ### Frontend
-- **Next.js 14** - React framework with App Router
+- **Next.js** - React framework with App Router
 - **TypeScript** - Type-safe development
 - **Tailwind CSS** - Utility-first styling
 - **shadcn/ui** - Modern component library
@@ -76,55 +76,73 @@
 - Google OAuth credentials
 - Groq API key
 - GitHub Personal Access Token
-- Vercel API token
+- Vercel Personal Access Token
 
 ## 🚀 Quick Start
 
 ### 1. Clone Repository
 
-\`\`\`bash
-git clone https://github.com/your-username/figmaguard.git
+```
+git clone https://github.com/P1Manav/FigmaGuard.git
 cd figmaguard
-\`\`\`
-
+```
 ### 2. Frontend Setup
 
-\`\`\`bash
 # Install dependencies
-npm install
+```
+yarn install
+```
 
 # Create environment file
-cp .env.local.example .env.local
+```
+.env.local 
+```
 
 # Add your Supabase credentials
+```
+NEXT_PUBLIC_BACKEND_URL=http://localhost:5000/
 NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
 NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
-\`\`\`
+```
 
 ### 3. Backend Setup
 
-\`\`\`bash
 # Navigate to backend
+```
 cd backend
+```
 
 # Create virtual environment
+```
 python -m venv venv
 source venv/bin/activate  # Windows: venv\Scripts\activate
+```
 
 # Install dependencies
+```
 pip install -r requirements.txt
+```
 
 # Install Playwright browsers
+```
 playwright install
+```
 
 # Create environment file
-cp .env.example .env
+```
+.env
+```
 
 # Add your credentials
+```
 SUPABASE_URL=your_supabase_url
 SUPABASE_KEY=your_supabase_service_role_key
 GROQ_API_KEY=your_groq_api_key
-\`\`\`
+GEMINI_API_KEY=your_gemini_api_key
+FLASK_ENV=development
+FLASK_DEBUG=True
+RENDER_URL=http://localhost:5000/  #optional for deployment on render
+```
 
 ### 4. Database Setup
 
@@ -135,14 +153,16 @@ GROQ_API_KEY=your_groq_api_key
 
 ### 5. Run the Application
 
-\`\`\`bash
 # Terminal 1: Backend
+```
 cd backend
 python server.py
+```
 
 # Terminal 2: Frontend
+```
 npm run dev
-\`\`\`
+```
 
 Visit `http://localhost:3000` 🎉
 
@@ -170,48 +190,6 @@ Visit `http://localhost:3000` 🎉
    - Deploys to Vercel
    - Runs comprehensive tests
 7. **Review** results and access your live website
-
-## 🔧 API Endpoints
-
-### Authentication Required
-All endpoints require a valid JWT token in the Authorization header:
-\`\`\`
-Authorization: Bearer <your-jwt-token>
-\`\`\`
-
-### Core Endpoints
-
-#### `POST /api/test`
-Test an existing URL against SRS requirements.
-
-**Request:**
-\`\`\`json
-{
-  "srs_document": "file",
-  "target_url": "https://example.com",
-  "test_types[]": ["functional", "accessibility"]
-}
-\`\`\`
-
-#### `POST /api/generate-and-test`
-Generate website from SRS and test it.
-
-**Request:**
-\`\`\`json
-{
-  "srs_document": "file",
-  "user_arguments": "Create a modern portfolio site",
-  "github_token": "ghp_...",
-  "vercel_token": "...",
-  "test_types[]": ["functional", "uiux", "performance"]
-}
-\`\`\`
-
-#### `GET /api/test-results/{test_run_id}`
-Retrieve test results for a specific test run.
-
-#### `GET /api/user/test-requests`
-Get all test requests for the authenticated user.
 
 ## 🧪 Testing Types Explained
 
@@ -257,35 +235,6 @@ The application uses PostgreSQL via Supabase with the following main tables:
 
 See `backend/supabase_schema.sql` for the complete schema.
 
-## 🔒 Environment Variables
-
-### Frontend (.env.local)
-\`\`\`env
-NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
-NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
-\`\`\`
-
-### Backend (.env)
-\`\`\`env
-SUPABASE_URL=https://your-project.supabase.co
-SUPABASE_KEY=your-service-role-key
-GROQ_API_KEY=your-groq-api-key
-FLASK_ENV=development
-\`\`\`
-
-## 🚀 Deployment
-
-### Frontend (Vercel)
-\`\`\`bash
-npm run build
-vercel --prod
-\`\`\`
-
-### Backend (Railway/Heroku)
-\`\`\`bash
-echo "web: python server.py" > Procfile
-# Deploy to your preferred platform
-\`\`\`
 
 ## 🤝 Contributing
 
@@ -299,48 +248,18 @@ echo "web: python server.py" > Procfile
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🐛 Troubleshooting
-
-### Common Issues
-
-**Authentication Errors**
-- Verify Google OAuth setup in Supabase
-- Check redirect URLs match exactly
-- Ensure environment variables are correct
-
-**Test Execution Failures**
-- Run \`playwright install\` to install browsers
-- Check if target URL is accessible
-- Verify Python dependencies are installed
-
-**Deployment Issues**
-- Ensure GitHub token has \`repo\` scope
-- Verify Vercel token has deployment permissions
-- Check API rate limits
-
 ### Getting Help
 
 - Check the [Issues](https://github.com/your-username/figmaguard/issues) page
 - Review the console logs for error details
 - Ensure all environment variables are properly set
 
-## 🗺️ Roadmap
-
-- [ ] Visual regression testing with screenshot comparison
-- [ ] Custom test case creation interface
-- [ ] Team collaboration features
-- [ ] CI/CD pipeline integration
-- [ ] Advanced AI models integration
-- [ ] Real-time collaborative testing
-- [ ] Performance benchmarking
-- [ ] Custom reporting templates
-
 ## 👨‍💻 Author
 
 **Your Name**
-- LinkedIn: [Your LinkedIn Profile](https://linkedin.com/in/your-profile)
-- Email: [your-email@example.com](mailto:your-email@example.com)
-- GitHub: [Your GitHub Profile](https://github.com/your-username)
+- LinkedIn: [Prajapati Manav](https://www.linkedin.com/in/manavdprajapati/)
+- Email: [maxprajapati606@gmail.com](mailto:maxprajapati606@gmail.com)
+- GitHub: [P1Manav](https://github.com/P1manav)
 
 ## ⭐ Show Your Support
 
