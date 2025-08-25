@@ -256,14 +256,14 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 👨‍💻 Author
 
-**Your Name**
+**Prajapati Manav**
 - LinkedIn: [Prajapati Manav](https://www.linkedin.com/in/manavdprajapati/)
 - Email: [maxprajapati606@gmail.com](mailto:maxprajapati606@gmail.com)
 - GitHub: [P1Manav](https://github.com/P1manav)
 
 ## ⭐ Show Your Support
 
-Give a ⭐️ if this project helped you!
+Give a ⭐️ if you liked this project !
 
 ---
 
