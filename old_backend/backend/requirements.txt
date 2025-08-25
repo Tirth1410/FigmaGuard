@@ -1,0 +1,8 @@
+flask
+flask_cors
+requests
+langchain_community
+langchain_groq
+google-genai
+pytest-playwright
+bs4
