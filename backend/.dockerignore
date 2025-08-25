@@ -1,0 +1,6 @@
+frontend
+node_modules
+.git
+__pycache__
+*.log
+*.lock

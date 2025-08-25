@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { cn } from "@/lib/utils"
-import { Button } from "@/components/ui/button"
+import { useState } from "react";
+import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
 import {
   CheckCircle,
   XCircle,
@@ -16,50 +16,65 @@ import {
   Filter,
   ChevronDown,
   ChevronRight,
-} from "lucide-react"
+} from "lucide-react";
 
-const TestResults = ({ testData, testType }) => {
-  const [expanded, setExpanded] = useState([])
-  const [filter, setFilter] = useState("all")
+// Define the shape of a single test result
+type TestResult = {
+  id: string;
+  name: string;
+  status: "pass" | "fail" | "warning";
+  type: "functional" | "uiux" | "accessibility" | "compatibility" | "performance";
+  description: string;
+  details: string;
+  srsReference: string;
+};
 
-  const toggleExpand = (id) => {
+type TestResultsProps = {
+  testData?: TestResult[];
+  testType: "all" | TestResult["type"];
+};
+
+const TestResults = ({ testData = [], testType }: TestResultsProps) => {
+  const [expanded, setExpanded] = useState<string[]>([]);
+  const [filter, setFilter] = useState<"all" | "pass" | "fail" | "warning">("all");
+
+  const toggleExpand = (id: string) => {
     if (expanded.includes(id)) {
-      setExpanded(expanded.filter((item) => item !== id))
+      setExpanded(expanded.filter((item) => item !== id));
     } else {
-      setExpanded([...expanded, id])
+      setExpanded([...expanded, id]);
     }
-  }
+  };
 
-  // Use testData prop, or fallback to mock data if not provided (e.g., for initial load)
-  const currentResults = testData || []
+  const currentResults = testData;
+  const filteredResults =
+    filter === "all" ? currentResults : currentResults.filter((test) => test.status === filter);
 
-  const filteredResults = filter === "all" ? currentResults : currentResults.filter((test) => test.status === filter)
-
-  const statusIcons = {
+  const statusIcons: Record<TestResult["status"], JSX.Element> = {
     pass: <CheckCircle className="h-5 w-5 text-green-500" />,
     fail: <XCircle className="h-5 w-5 text-red-500" />,
     warning: <AlertCircle className="h-5 w-5 text-yellow-500" />,
-  }
+  };
 
-  const statusColors = {
+  const statusColors: Record<TestResult["status"], string> = {
     pass: "bg-green-500/10 border-green-500/30 text-green-500",
     fail: "bg-red-500/10 border-red-500/30 text-red-500",
     warning: "bg-yellow-500/10 border-yellow-500/30 text-yellow-500",
-  }
+  };
 
-  const typeIcons = {
+  const typeIcons: Record<TestResult["type"], JSX.Element> = {
     functional: <Code className="h-4 w-4" />,
     uiux: <Eye className="h-4 w-4" />,
     accessibility: <FileText className="h-4 w-4" />,
     compatibility: <Monitor className="h-4 w-4" />,
     performance: <Terminal className="h-4 w-4" />,
-  }
+  };
 
   // Calculate test statistics
-  const totalTests = currentResults.length
-  const passedTests = currentResults.filter((test) => test.status === "pass").length
-  const failedTests = currentResults.filter((test) => test.status === "fail").length
-  const warningTests = currentResults.filter((test) => test.status === "warning").length
+  const totalTests = currentResults.length;
+  const passedTests = currentResults.filter((test) => test.status === "pass").length;
+  const failedTests = currentResults.filter((test) => test.status === "fail").length;
+  const warningTests = currentResults.filter((test) => test.status === "warning").length;
 
   return (
     <div>
@@ -68,8 +83,8 @@ const TestResults = ({ testData, testType }) => {
           {testType === "all"
             ? "All Test Results"
             : testType === "uiux"
-              ? "UI/UX Test Results"
-              : `${testType.charAt(0).toUpperCase() + testType.slice(1)} Test Results`}
+            ? "UI/UX Test Results"
+            : `${testType.charAt(0).toUpperCase() + testType.slice(1)} Test Results`}
         </h3>
         <Button
           variant="outline"
@@ -111,10 +126,16 @@ const TestResults = ({ testData, testType }) => {
         <h4 className="font-medium">Test Cases</h4>
         <div className="flex items-center space-x-2">
           <Filter className="h-4 w-4 text-muted-foreground" />
+          <label htmlFor="filter" className="sr-only">
+            Filter results
+          </label>
           <select
+            id="filter"
             className="bg-transparent border-none text-sm focus:outline-none focus:ring-0 cursor-pointer"
             value={filter}
-            onChange={(e) => setFilter(e.target.value)}
+            onChange={(e) =>
+              setFilter(e.target.value as "all" | "pass" | "fail" | "warning")
+            }
           >
             <option value="all">All Results</option>
             <option value="pass">Passed Only</option>
@@ -136,20 +157,22 @@ const TestResults = ({ testData, testType }) => {
                 onClick={() => toggleExpand(test.id)}
               >
                 <div className="flex items-center space-x-3">
-                  {statusIcons[test.status as keyof typeof statusIcons]}
+                  {statusIcons[test.status]}
                   <span className="font-medium">{test.name}</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   {testType === "all" && (
                     <span className="hidden sm:flex items-center text-xs text-muted-foreground">
-                      {typeIcons[test.type as keyof typeof typeIcons]}
-                      <span className="ml-1">{test.type.charAt(0).toUpperCase() + test.type.slice(1)}</span>
+                      {typeIcons[test.type]}
+                      <span className="ml-1">
+                        {test.type.charAt(0).toUpperCase() + test.type.slice(1)}
+                      </span>
                     </span>
                   )}
                   <span
                     className={cn(
                       "text-xs px-2 py-1 rounded-full border",
-                      statusColors[test.status as keyof typeof statusColors],
+                      statusColors[test.status]
                     )}
                   >
                     {test.status.toUpperCase()}
@@ -164,8 +187,12 @@ const TestResults = ({ testData, testType }) => {
 
               {expanded.includes(test.id) && (
                 <div className="p-4 border-t border-border/50 bg-muted/20">
-                  <p className="text-sm text-muted-foreground mb-2">{test.description}</p>
-                  <div className="bg-card/50 p-3 rounded border border-border/50 text-sm mb-3">{test.details}</div>
+                  <p className="text-sm text-muted-foreground mb-2">
+                    {test.description}
+                  </p>
+                  <div className="bg-card/50 p-3 rounded border border-border/50 text-sm mb-3">
+                    {test.details}
+                  </div>
                   <div className="text-xs text-muted-foreground">
                     <strong>SRS Reference:</strong> {test.srsReference}
                   </div>
@@ -174,11 +201,13 @@ const TestResults = ({ testData, testType }) => {
             </div>
           ))
         ) : (
-          <div className="text-center py-8 text-muted-foreground">No test results match the current filter.</div>
+          <div className="text-center py-8 text-muted-foreground">
+            No test results match the current filter.
+          </div>
         )}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default TestResults
+export default TestResults;

@@ -9,7 +9,6 @@ const inter = Inter({ subsets: ["latin"] })
 export const metadata: Metadata = {
   title: "FigmaGuard - Automated Testing Platform",
   description: "Validate designs against requirements with automated testing",
-    generator: 'v0.app'
 }
 
 export default function RootLayout({

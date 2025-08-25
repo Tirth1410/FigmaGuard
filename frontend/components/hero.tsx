@@ -216,6 +216,7 @@ Check browser console for details.`)
                         accept=".pdf,.docx"
                         onChange={handleFileChange}
                         required
+                        aria-label="Upload SRS"
                       />
                       <Button
                         type="button"
