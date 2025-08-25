@@ -3,9 +3,9 @@ import { Linkedin, Mail, Github } from "lucide-react" // Import new icons
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
-  const githubRepoUrl = "https://github.com/your-username/figmaguard" // Replace with your actual GitHub repo URL
-  const linkedinUrl = "https://www.linkedin.com/in/your-profile" // Replace with your LinkedIn profile URL
-  const gmailUrl = "mailto:your-email@example.com" // Replace with your email address
+  const githubRepoUrl = "https://github.com/P1Manav/FigmaGuard" // Replace with your actual GitHub repo URL
+  const linkedinUrl = "https://www.linkedin.com/in/manavdprajapati/" // Replace with your LinkedIn profile URL
+  const gmailUrl = "mailto:maxprajapati606@gmail.com" // Replace with your email address
 
   return (
     <footer className="border-t border-border/40 bg-muted/10 backdrop-blur-sm py-12 relative overflow-hidden">
