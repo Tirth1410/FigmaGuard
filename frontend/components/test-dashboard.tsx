@@ -25,7 +25,6 @@ export default function TestDashboard() {
       }
 
       try {
-        // In a real app, you'd fetch from your backend: /api/test-results/<testRunId>
         const response = await fetch(
           `${process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:5000"}/api/test-results/${testRunId}`,
         )

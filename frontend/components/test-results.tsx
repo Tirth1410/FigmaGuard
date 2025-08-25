@@ -18,31 +18,11 @@ import {
   ChevronRight,
 } from "lucide-react"
 
-// ---- Types ----
-type TestStatus = "pass" | "fail" | "warning"
-type TestType = "functional" | "uiux" | "accessibility" | "compatibility" | "performance"
+const TestResults = ({ testData, testType }) => {
+  const [expanded, setExpanded] = useState([])
+  const [filter, setFilter] = useState("all")
 
-interface TestResult {
-  id: string
-  name: string
-  status: TestStatus
-  type: TestType
-  description: string
-  details: string
-  srsReference: string
-}
-
-interface TestResultsProps {
-  testData?: TestResult[]
-  testType: TestType | "all"
-}
-
-// ---- Component ----
-const TestResults: React.FC<TestResultsProps> = ({ testData, testType }) => {
-  const [expanded, setExpanded] = useState<string[]>([])
-  const [filter, setFilter] = useState<"all" | TestStatus>("all")
-
-  const toggleExpand = (id: string) => {
+  const toggleExpand = (id) => {
     if (expanded.includes(id)) {
       setExpanded(expanded.filter((item) => item !== id))
     } else {
@@ -50,10 +30,10 @@ const TestResults: React.FC<TestResultsProps> = ({ testData, testType }) => {
     }
   }
 
-  // Use testData prop, or fallback to empty array
+  // Use testData prop, or fallback to mock data if not provided (e.g., for initial load)
   const currentResults = testData || []
-  const filteredResults =
-    filter === "all" ? currentResults : currentResults.filter((test) => test.status === filter)
+
+  const filteredResults = filter === "all" ? currentResults : currentResults.filter((test) => test.status === filter)
 
   const statusIcons = {
     pass: <CheckCircle className="h-5 w-5 text-green-500" />,
@@ -75,7 +55,7 @@ const TestResults: React.FC<TestResultsProps> = ({ testData, testType }) => {
     performance: <Terminal className="h-4 w-4" />,
   }
 
-  // Test statistics
+  // Calculate test statistics
   const totalTests = currentResults.length
   const passedTests = currentResults.filter((test) => test.status === "pass").length
   const failedTests = currentResults.filter((test) => test.status === "fail").length
@@ -83,7 +63,6 @@ const TestResults: React.FC<TestResultsProps> = ({ testData, testType }) => {
 
   return (
     <div>
-      {/* Header */}
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6">
         <h3 className="text-xl font-semibold">
           {testType === "all"
@@ -101,7 +80,6 @@ const TestResults: React.FC<TestResultsProps> = ({ testData, testType }) => {
         </Button>
       </div>
 
-      {/* Stats */}
       <div className="grid grid-cols-1 sm:grid-cols-4 gap-4 mb-6">
         <div className="bg-card/50 rounded-lg p-4 border border-border/50 hover:border-[#6A5ACD]/30 hover:shadow-[0_0_15px_rgba(106,90,205,0.1)] transition-all duration-300">
           <div className="flex items-center justify-between">
@@ -129,20 +107,14 @@ const TestResults: React.FC<TestResultsProps> = ({ testData, testType }) => {
         </div>
       </div>
 
-      {/* Filter */}
       <div className="flex justify-between items-center mb-4">
         <h4 className="font-medium">Test Cases</h4>
         <div className="flex items-center space-x-2">
           <Filter className="h-4 w-4 text-muted-foreground" />
-          <label className="sr-only" htmlFor="result-filter">
-            Filter results
-          </label>
           <select
-            id="result-filter"
-            aria-label="Filter results"
             className="bg-transparent border-none text-sm focus:outline-none focus:ring-0 cursor-pointer"
             value={filter}
-            onChange={(e) => setFilter(e.target.value as "all" | TestStatus)}
+            onChange={(e) => setFilter(e.target.value)}
           >
             <option value="all">All Results</option>
             <option value="pass">Passed Only</option>
@@ -152,10 +124,9 @@ const TestResults: React.FC<TestResultsProps> = ({ testData, testType }) => {
         </div>
       </div>
 
-      {/* Test list */}
       <div className="space-y-4 max-h-[600px] overflow-y-auto pr-2">
         {filteredResults.length > 0 ? (
-          filteredResults.map((test: TestResult) => (
+          filteredResults.map((test) => (
             <div
               key={test.id}
               className="border border-border/50 rounded-lg overflow-hidden transition-all duration-300 hover:border-[#6A5ACD]/30 hover:shadow-[0_0_15px_rgba(106,90,205,0.1)]"
@@ -165,22 +136,20 @@ const TestResults: React.FC<TestResultsProps> = ({ testData, testType }) => {
                 onClick={() => toggleExpand(test.id)}
               >
                 <div className="flex items-center space-x-3">
-                  {statusIcons[test.status]}
+                  {statusIcons[test.status as keyof typeof statusIcons]}
                   <span className="font-medium">{test.name}</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   {testType === "all" && (
                     <span className="hidden sm:flex items-center text-xs text-muted-foreground">
-                      {typeIcons[test.type]}
-                      <span className="ml-1">
-                        {test.type.charAt(0).toUpperCase() + test.type.slice(1)}
-                      </span>
+                      {typeIcons[test.type as keyof typeof typeIcons]}
+                      <span className="ml-1">{test.type.charAt(0).toUpperCase() + test.type.slice(1)}</span>
                     </span>
                   )}
                   <span
                     className={cn(
                       "text-xs px-2 py-1 rounded-full border",
-                      statusColors[test.status],
+                      statusColors[test.status as keyof typeof statusColors],
                     )}
                   >
                     {test.status.toUpperCase()}
@@ -196,9 +165,7 @@ const TestResults: React.FC<TestResultsProps> = ({ testData, testType }) => {
               {expanded.includes(test.id) && (
                 <div className="p-4 border-t border-border/50 bg-muted/20">
                   <p className="text-sm text-muted-foreground mb-2">{test.description}</p>
-                  <div className="bg-card/50 p-3 rounded border border-border/50 text-sm mb-3">
-                    {test.details}
-                  </div>
+                  <div className="bg-card/50 p-3 rounded border border-border/50 text-sm mb-3">{test.details}</div>
                   <div className="text-xs text-muted-foreground">
                     <strong>SRS Reference:</strong> {test.srsReference}
                   </div>
@@ -207,9 +174,7 @@ const TestResults: React.FC<TestResultsProps> = ({ testData, testType }) => {
             </div>
           ))
         ) : (
-          <div className="text-center py-8 text-muted-foreground">
-            No test results match the current filter.
-          </div>
+          <div className="text-center py-8 text-muted-foreground">No test results match the current filter.</div>
         )}
       </div>
     </div>

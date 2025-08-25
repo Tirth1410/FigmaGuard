@@ -1,12 +1,12 @@
 {
-  "name": "figmaguard",
+  "name": "my-v0-project",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build": "yarn build",
+    "build": "next build",
     "dev": "next dev",
     "lint": "next lint",
-    "start": "npm run dev"
+    "start": "next start"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",

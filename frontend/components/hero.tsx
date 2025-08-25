@@ -46,6 +46,8 @@ export default function Hero() {
     e.preventDefault()
     setIsLoading(true)
 
+    console.log("[v0] Backend URL:", process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:5000")
+
     if (!file) {
       alert("Please upload an SRS document.")
       setIsLoading(false)
@@ -69,9 +71,11 @@ export default function Hero() {
       return
     }
 
+    console.log("[v0] User session:", session?.user?.email)
+
     const formData = new FormData()
     formData.append("srs_document", file)
-    selectedTestTypes.forEach((type) => formData.append("test_types[]", type)) // Append selected test types
+    selectedTestTypes.forEach((type) => formData.append("test_types[]", type))
 
     let endpoint = ""
     let redirectUrl = ""
@@ -104,6 +108,11 @@ export default function Hero() {
       redirectUrl = `/dashboard?document=${encodeURIComponent(file.name)}`
     }
 
+    console.log("[v0] Making request to endpoint:", endpoint)
+    console.log("[v0] Request headers:", {
+      Authorization: `Bearer ${session.access_token}`,
+    })
+
     try {
       const response = await fetch(endpoint, {
         method: "POST",
@@ -113,13 +122,17 @@ export default function Hero() {
         body: formData,
       })
 
+      console.log("[v0] Response status:", response.status)
+      console.log("[v0] Response headers:", Object.fromEntries(response.headers.entries()))
+
       if (!response.ok) {
         const errorData = await response.json()
+        console.log("[v0] Error response data:", errorData)
         throw new Error(`HTTP error! status: ${response.status}, message: ${errorData.message || response.statusText}`)
       }
 
       const result = await response.json()
-      console.log("Backend response:", result)
+      console.log("[v0] Backend response:", result)
 
       if (result.success) {
         // If website was generated, use its URL for redirection
@@ -129,8 +142,11 @@ export default function Hero() {
         alert(`Error: ${result.message || "Something went wrong."}`)
       }
     } catch (error: any) {
-      console.error("Failed to submit form:", error)
-      alert(`Failed to connect to the backend or process request: ${error.message}. Check console for details.`)
+      console.error("[v0] Failed to submit form:", error)
+      alert(`Failed to connect to the backend or process request: ${error.message}. 
+      
+Backend URL: ${process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:5000"}
+Check browser console for details.`)
     } finally {
       setIsLoading(false)
     }
