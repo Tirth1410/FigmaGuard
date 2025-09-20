@@ -48,7 +48,7 @@ def generate_code_with_llm(srs_content: str, user_arguments: str) -> str:
                     "content": prompt,
                 },
             ],
-            model="llama3-8b-8192", # You can choose other models like "mixtral-8x7b-32768"
+            model="llama-3.1-8b-instant", # You can choose other models like "mixtral-8x7b-32768"
             temperature=0.7,
             max_tokens=4000,
         )
