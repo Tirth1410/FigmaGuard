@@ -1,7 +1,7 @@
 import os
 import json
 import requests
-import fitz  # PyMuPDF for PDF parsing
+import fitz  # PyMuPDF
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -30,7 +30,7 @@ def extract_text_from_pdf(pdf_path: str) -> str:
 
 def generate_testcases(test_type: str, srs_source: str, is_pdf: bool = True):
     """
-    Generate structured JSON testcases from Gemini based on test_type + SRS.
+    Generate structured JSON testcases from Gemini 2.5 based on test_type + SRS.
     - If is_pdf=True, srs_source is treated as a path to a PDF file.
     - If is_pdf=False, srs_source is treated as raw SRS text.
     """
@@ -69,10 +69,10 @@ def generate_testcases(test_type: str, srs_source: str, is_pdf: bool = True):
     """
 
     body = {
-        "contents": [
+        "messages": [
             {
-                "role": "user",
-                "parts": [{"text": prompt}]
+                "author": "user",
+                "content": [{"type": "text", "text": prompt}]
             }
         ]
     }
@@ -88,10 +88,15 @@ def generate_testcases(test_type: str, srs_source: str, is_pdf: bool = True):
         )
 
         print("Gemini status:", response.status_code)
-        print("Gemini raw:", response.text[:400])
+        print("Gemini raw (first 400 chars):", response.text[:400])
 
         response.raise_for_status()
-        text = response.json()["candidates"][0]["content"]["parts"][0]["text"].strip()
+
+        candidates = response.json().get("candidates", [])
+        if not candidates:
+            raise RuntimeError("No candidates returned from Gemini API")
+
+        text = candidates[0]["content"][0]["text"].strip()
 
         if text.startswith("```"):
             text = text.split("```")[1]
