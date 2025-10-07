@@ -48,7 +48,7 @@ def generate_code_with_llm(srs_content: str, user_arguments: str) -> str:
                     "content": prompt,
                 },
             ],
-            model="llama-3.1-8b-instant", # You can choose other models like "mixtral-8x7b-32768"
+            model="meta-llama/llama-4-scout-17b-16e-instruct",
             temperature=0.7,
             max_tokens=4000,
         )
@@ -57,7 +57,6 @@ def generate_code_with_llm(srs_content: str, user_arguments: str) -> str:
         return generated_code
     except Exception as e:
         print(f"Error generating code with LLM: {e}")
-        # Fallback to a simple default HTML if LLM generation fails
         return f"""
 <!DOCTYPE html>
 <html lang="en">

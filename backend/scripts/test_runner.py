@@ -125,6 +125,8 @@ async def run_tests(url, test_run_id, srs_pdf_path, test_type):
         captured_output = StringIO()
         with redirect_stdout(captured_output):
             testcases = generate_testcases(test_type, srs_content, is_pdf=False)
+            print("[DEBUG] Generated testcases:", json.dumps(testcases, indent=2)[:800], file=sys.stderr)
+
 
         dom_map = await scrape_dom(url)
         results = []
