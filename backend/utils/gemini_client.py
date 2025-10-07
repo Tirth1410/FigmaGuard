@@ -4,14 +4,13 @@ import requests
 import fitz  # PyMuPDF for PDF parsing
 from dotenv import load_dotenv
 
-# Load environment variables from backend/.env
 load_dotenv()
 
 API_KEY = os.getenv("GEMINI_API_KEY")
-API_URL = "https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash:generateContent"
+API_URL = "https://generativelanguage.googleapis.com/v1/models/gemini-2.5-flash-lite:generateText"
 
 if not API_KEY:
-    raise RuntimeError("❌ GEMINI_API_KEY is not set in environment variables!")
+    raise RuntimeError("GEMINI_API_KEY is not set in environment variables!")
 
 def extract_text_from_pdf(pdf_path: str) -> str:
     """
@@ -89,12 +88,11 @@ def generate_testcases(test_type: str, srs_source: str, is_pdf: bool = True):
         )
 
         print("Gemini status:", response.status_code)
-        print("Gemini raw:", response.text[:400])  # Debug: first 400 chars
+        print("Gemini raw:", response.text[:400])
 
         response.raise_for_status()
         text = response.json()["candidates"][0]["content"]["parts"][0]["text"].strip()
 
-        # Strip accidental markdown fences
         if text.startswith("```"):
             text = text.split("```")[1]
             if text.startswith("json"):
